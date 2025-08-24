@@ -16,6 +16,8 @@
 
 ### 3rd Commit
 
+ - Plotted closing price over time for each time period and saved the figures as PNG files.
+
 ### 4th Commit
 
 ### 5th Commit

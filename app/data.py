@@ -1,5 +1,6 @@
 from flask import Flask, render_template_string
 import pandas as pd
+import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 
@@ -18,6 +19,16 @@ df1 = df[(df['Date'] >= '1992-03-17') & (df['Date'] <= '2000-12-31')]
 df2 = df[(df['Date'] >= '2001-01-01') & (df['Date'] <= '2010-12-31')]
 df3 = df[(df['Date'] >= '2011-01-01') & (df['Date'] <= '2017-11-10')]
 
+# Plot closing price over time for each period and save figures
+for i, d in enumerate([df1, df2, df3], start=1):
+    plt.figure(figsize=(10, 5))
+    plt.plot(d['Date'], d['Close'])
+    plt.title(f'Closing Price Over Time (Period {i})')
+    plt.xlabel('Date')
+    plt.ylabel('Close Price')
+    plt.tight_layout()
+    plt.savefig(f'closing_price_period_{i}.png')
+    plt.close()
 
 @app.route('/')
 def show_dataframe():
