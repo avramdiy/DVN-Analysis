@@ -12,6 +12,8 @@
 
 ### 2nd Commit
 
+- Loaded DVN stock data, dropped the OpenInt column, and split the dataset into three time periods for analysis using pandas.
+
 ### 3rd Commit
 
 ### 4th Commit
