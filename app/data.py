@@ -30,6 +30,17 @@ for i, d in enumerate([df1, df2, df3], start=1):
     plt.savefig(f'closing_price_period_{i}.png')
     plt.close()
 
+# Plot volume traded over time for each period and save figures
+for i, d in enumerate([df1, df2, df3], start=1):
+    plt.figure(figsize=(10, 5))
+    plt.plot(d['Date'], d['Volume'], color='orange')
+    plt.title(f'Volume Traded Over Time (Period {i})')
+    plt.xlabel('Date')
+    plt.ylabel('Volume')
+    plt.tight_layout()
+    plt.savefig(f'volume_traded_period_{i}.png')
+    plt.close()
+
 @app.route('/')
 def show_dataframe():
     file_path = r'C:\Users\avram\OneDrive\Desktop\TRG Week 38\dvn.us.txt'

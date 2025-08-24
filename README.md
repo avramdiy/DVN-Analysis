@@ -19,5 +19,5 @@
  - Plotted closing price over time for each time period and saved the figures as PNG files.
 
 ### 4th Commit
-
+ - Plotted volume traded over time for each time period and saved the figures as PNG files.
 ### 5th Commit
