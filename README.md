@@ -20,4 +20,6 @@
 
 ### 4th Commit
  - Plotted volume traded over time for each time period and saved the figures as PNG files.
+ 
 ### 5th Commit
+ - Plotted 30-day moving average of closing price for each time period and saved the figures as PNG files.

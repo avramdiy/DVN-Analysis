@@ -41,6 +41,18 @@ for i, d in enumerate([df1, df2, df3], start=1):
     plt.savefig(f'volume_traded_period_{i}.png')
     plt.close()
 
+# Plot 30-day moving average of closing price for each period and save figures
+for i, d in enumerate([df1, df2, df3], start=1):
+    plt.figure(figsize=(10, 5))
+    ma = d['Close'].rolling(window=30).mean()
+    plt.plot(d['Date'], ma, color='green')
+    plt.title(f'30-Day Moving Average of Closing Price (Period {i})')
+    plt.xlabel('Date')
+    plt.ylabel('30-Day MA Close Price')
+    plt.tight_layout()
+    plt.savefig(f'moving_average_period_{i}.png')
+    plt.close()
+
 @app.route('/')
 def show_dataframe():
     file_path = r'C:\Users\avram\OneDrive\Desktop\TRG Week 38\dvn.us.txt'
